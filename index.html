@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adarsh K S | Portfolio</title>
+    <!-- Use Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 1rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Large rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #1f2937;
+            text-align: center;
+        }
+        .text-gradient {
+            background-image: linear-gradient(45deg, #1d4ed8, #4b5563);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+
+    <!-- Header Section -->
+    <header class="py-6 sm:py-8 bg-white shadow-sm rounded-b-3xl">
+        <div class="container flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gradient">
+                Adarsh K S
+            </h1>
+            <nav class="mt-4 sm:mt-0 space-x-4 sm:space-x-6 text-gray-600 font-medium">
+                <a href="#about" class="hover:text-blue-600 transition-colors duration-300">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 transition-colors duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container py-8 sm:py-12 space-y-12 sm:space-y-16">
+
+        <!-- About Me Section -->
+        <section id="about" class="card">
+            <h2 class="section-title">About Me</h2>
+            <div class="text-lg text-gray-700">
+                <p class="mb-4">
+                    Hello! My name is Adarsh K S, a B.Tech Computer Science student currently attending Vidya Academy of Science and Technology in Thrissur, Kerala.
+                </p>
+                <p>
+                    I am passionate about technology and solving complex problems with code. As a computer science student, I am constantly learning and exploring new areas within the field, from web development to data structures and algorithms. I am eager to apply my knowledge and contribute to innovative projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="card">
+            <h2 class="section-title">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <!-- Example skill badges, feel free to add or remove -->
+                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                    Python
+                </span>
+                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                    C++
+                </span>
+                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                    Data Structures & Algorithms
+                </span>
+                <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                    Web Development
+                </span>
+                <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                    HTML & CSS
+                </span>
+                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                    JavaScript
+                </span>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="card">
+            <h2 class="section-title">Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Placeholder project card 1 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title One</h3>
+                    <p class="text-gray-600 text-sm">A brief description of your project. Mention the technologies used and what problem it solves. </p>
+                </div>
+                <!-- Placeholder project card 2 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title Two</h3>
+                    <p class="text-gray-600 text-sm">A brief description of your project. Mention the technologies used and what problem it solves. </p>
+                </div>
+                <!-- Placeholder project card 3 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title Three</h3>
+                    <p class="text-gray-600 text-sm">A brief description of your project. Mention the technologies used and what problem it solves. </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="card">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="text-center text-lg text-gray-700">
+                <p class="mb-4">
+                    I am always open to new opportunities and collaborations. Feel free to connect with me!
+                </p>
+                <div class="space-y-4">
+                    <!-- Email Link -->
+                    <a href="mailto:your.email@example.com" class="inline-block bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-blue-600 transition-colors duration-300">
+                        Email Me
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 sm:py-8 text-center text-gray-500 text-sm">
+        <p>
+            &copy; 2024 Adarsh K S. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
