@@ -11,9 +11,33 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulseBorder {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 176, 255, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 176, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 176, 255, 0);
+            }
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #1a1a2e; /* Darker background */
+            color: #e0e0e0; /* Light text color for contrast */
+            background-image: radial-gradient(circle at 50% 10%, #2a2a44, #1a1a2e 70%);
         }
         .container {
             max-width: 1200px;
@@ -21,56 +45,101 @@
             padding: 1rem;
         }
         .card {
-            background-color: #ffffff;
+            background-color: #2a2a44; /* Darker card background */
             border-radius: 1.5rem; /* Large rounded corners */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 2.5rem;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out forwards;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 176, 255, 0.2);
         }
         .section-title {
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            color: #1f2937;
+            color: #ffffff;
             text-align: center;
         }
         .text-gradient {
-            background-image: linear-gradient(45deg, #1d4ed8, #4b5563);
+            background-image: linear-gradient(45deg, #00b0ff, #505cff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .hero-section {
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        .profile-pic {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            border: 4px solid #00b0ff;
+            animation: pulseBorder 2s infinite;
+            margin-bottom: 1.5rem;
+        }
+        .project-card {
+            background-color: #1f1f33;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .project-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
         }
     </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800 leading-relaxed">
+<body class="bg-gray-900 text-gray-200 leading-relaxed">
 
     <!-- Header Section -->
-    <header class="py-6 sm:py-8 bg-white shadow-sm rounded-b-3xl">
+    <header class="py-6 sm:py-8 bg-slate-900 shadow-xl rounded-b-3xl">
         <div class="container flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <h1 class="text-3xl sm:text-4xl font-extrabold text-gradient">
                 Adarsh K S
             </h1>
-            <nav class="mt-4 sm:mt-0 space-x-4 sm:space-x-6 text-gray-600 font-medium">
-                <a href="#about" class="hover:text-blue-600 transition-colors duration-300">About</a>
-                <a href="#skills" class="hover:text-blue-600 transition-colors duration-300">Skills</a>
-                <a href="#projects" class="hover:text-blue-600 transition-colors duration-300">Projects</a>
-                <a href="#contact" class="hover:text-blue-600 transition-colors duration-300">Contact</a>
+            <nav class="mt-4 sm:mt-0 space-x-4 sm:space-x-6 text-gray-400 font-medium">
+                <a href="#about" class="hover:text-blue-400 transition-colors duration-300">About</a>
+                <a href="#skills" class="hover:text-blue-400 transition-colors duration-300">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors duration-300">Projects</a>
+                <a href="#contact" class="hover:text-blue-400 transition-colors duration-300">Contact</a>
             </nav>
         </div>
     </header>
 
     <main class="container py-8 sm:py-12 space-y-12 sm:space-y-16">
 
+        <!-- Hero Section -->
+        <section class="hero-section rounded-3xl">
+            <div class="flex flex-col items-center">
+                <!-- You can replace this with a real image of yourself -->
+                <img src="https://placehold.co/128x128/3a3a55/e0e0e0?text=AK" alt="Profile Picture of Adarsh" class="profile-pic">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4 animate-fadeIn">
+                    Innovate, Create, Code
+                </h1>
+                <p class="text-xl text-gray-300 max-w-2xl animate-fadeIn">
+                    I am a B.Tech Computer Science student passionate about building elegant solutions and pushing the boundaries of technology.
+                </p>
+            </div>
+        </section>
+
         <!-- About Me Section -->
         <section id="about" class="card">
             <h2 class="section-title">About Me</h2>
-            <div class="text-lg text-gray-700">
+            <div class="text-lg text-gray-400">
                 <p class="mb-4">
                     Hello! My name is Adarsh K S, a B.Tech Computer Science student currently attending Vidya Academy of Science and Technology in Thrissur, Kerala.
                 </p>
@@ -85,22 +154,22 @@
             <h2 class="section-title">Skills</h2>
             <div class="flex flex-wrap justify-center gap-3">
                 <!-- Example skill badges, feel free to add or remove -->
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                <span class="bg-blue-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
                     Python
                 </span>
-                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                <span class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
                     C++
                 </span>
-                <span class="bg-gray-100 text-gray-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                <span class="bg-gray-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
                     Data Structures & Algorithms
                 </span>
-                <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                <span class="bg-emerald-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
                     Web Development
                 </span>
-                <span class="bg-orange-100 text-orange-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                <span class="bg-orange-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
                     HTML & CSS
                 </span>
-                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-4 py-2 rounded-full shadow-md">
+                <span class="bg-yellow-600 text-white text-sm font-medium px-4 py-2 rounded-full shadow-md">
                     JavaScript
                 </span>
             </div>
@@ -110,28 +179,45 @@
         <section id="projects" class="card">
             <h2 class="section-title">Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Placeholder project card 1 -->
-                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title One</h3>
-                    <p class="text-gray-600 text-sm">A brief description of your project. Mention the technologies used and what problem it solves. </p>
-                </div>
+                <!-- Project: Ethical Work -->
+                <a href="https://ethicalwork.netlify.app/" target="_blank" class="block project-card">
+                    <div>
+                        <img src="https://placehold.co/600x400/1f1f33/00b0ff?text=Ethical+Work" alt="A screenshot of the Ethical Work website" class="project-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Ethical Work Website</h3>
+                            <p class="text-gray-400 text-sm">
+                                A website I created for a personal project. This serves as a great example of my web development skills.
+                            </p>
+                        </div>
+                    </div>
+                </a>
                 <!-- Placeholder project card 2 -->
-                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title Two</h3>
-                    <p class="text-gray-600 text-sm">A brief description of your project. Mention the technologies used and what problem it solves. </p>
-                </div>
+                <a href="#" class="block project-card">
+                    <div>
+                        <img src="https://placehold.co/600x400/1f1f33/00b0ff?text=Project+Two" alt="Placeholder image for Project Two" class="project-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Project Title Two</h3>
+                            <p class="text-gray-400 text-sm">A brief description of your project. Mention the technologies used and what problem it solves.</p>
+                        </div>
+                    </div>
+                </a>
                 <!-- Placeholder project card 3 -->
-                <div class="bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Project Title Three</h3>
-                    <p class="text-gray-600 text-sm">A brief description of your project. Mention the technologies used and what problem it solves. </p>
-                </div>
+                <a href="#" class="block project-card">
+                    <div>
+                        <img src="https://placehold.co/600x400/1f1f33/00b0ff?text=Project+Three" alt="Placeholder image for Project Three" class="project-image">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Project Title Three</h3>
+                            <p class="text-gray-400 text-sm">A brief description of your project. Mention the technologies used and what problem it solves.</p>
+                        </div>
+                    </div>
+                </a>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="card">
             <h2 class="section-title">Get in Touch</h2>
-            <div class="text-center text-lg text-gray-700">
+            <div class="text-center text-lg text-gray-400">
                 <p class="mb-4">
                     I am always open to new opportunities and collaborations. Feel free to connect with me!
                 </p>
